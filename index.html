@@ -123,24 +123,6 @@
     </style>
     <script>
 
-        let historyData = []; // Almacenará los datos generados
-
-        function authenticate() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var errorMessage = document.getElementById('login-error');
-
-            // Verificar credenciales
-            if (username === 'LCNC' && password === '@Roos@carnet2024') {
-                document.querySelector('.login-overlay').style.display = 'none'; // Ocultar el login
-                document.querySelector('.container-cod').style.display = 'block'; // Mostrar el generador de código
-            } else {
-                errorMessage.textContent = 'Usuario o contraseña incorrectos.';
-                document.getElementById('username').value = ''; // Limpiar campo de usuario
-                document.getElementById('password').value = ''; // Limpiar campo de contraseña
-            }
-        }
-
         function updateBarcode() {
             var userInput = document.getElementById('userInput').value;
             var lastNameInput = document.getElementById('lastNameInput').value.toUpperCase();
@@ -274,16 +256,6 @@
 </head>
 
 <body>
-    <!-- Login Overlay -->
-    <div class="login-overlay">
-        <div class="login-container">
-            <h2 class="login-title">Iniciar Sesión</h2>
-            <input type="text" id="username" class="login-input-cod" placeholder="Usuario">
-            <input type="password" id="password" class="login-input-cod" placeholder="Contraseña">
-            <button class="login-button" onclick="authenticate()">Ingresar</button>
-            <div class="login-error" id="login-error"></div>
-        </div>
-    </div>
 
     <div class="container container-cod">
         <h2 class="title">Generador Carnet Estudiantil</h2>
